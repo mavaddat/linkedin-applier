@@ -41,7 +41,8 @@ def job_traverse_all_pages(browser, url, current_page=0):
     browser.get(url)
     js_scroll_to_bottom = '''
          var jobPane = document.querySelector(".jobs-search-results");
-         jobPane.animate({scrollTop: jobPane.prop("scrollHeight")}, 1000);
+         jobPane.scrollIntoView();
+         jobPane.scrollTo(0,jobPane.scrollHeight);
          '''
     # linkedin won't show you up to 25 job listings right away due to
     # disgusting JS infested UI design
